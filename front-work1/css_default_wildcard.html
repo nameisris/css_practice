@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            color: red;
+        }
+        h1 {color: orange;}
+        p {color: blue;}
+        
+        #header {
+            background-color: aquamarine;
+            width: 800px;
+            /* 위아래는 margin을 자동으로 0 */
+            margin: 0 auto;
+        }
+
+        #wrap {
+            border-color: antiquewhite;
+            width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        #aside {
+            width: 200px;
+            background-color: blue;
+            float: left;
+        }
+
+        #content {
+            width: 600px;
+            background-color: cadetblue;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <h1>제목 글자 태그</h1>
+    <p>사상 최대 위기 맞고 있는 애플 '아이폰15' 발표 D-1</p>
+
+    <div id="header">
+        <h1>#header 태그</h1>
+    </div>
+    <div id="wrap">
+        <div id="aside"><h1>#aside 태그</h1></div>
+        <div id="content"><h1>#content 태그</h1></div>
+    </div>
+</body>
+</html>
