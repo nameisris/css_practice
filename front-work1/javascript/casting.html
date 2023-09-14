@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 문자형으로 형변환
+        let n = 10;
+        let sn = String(n);
+        console.log(typeof sn);
+
+        let b = true;
+        let sb = String(b);
+        console.log(sb);
+        console.log(typeof sb);
+
+        // 숫자로 형변환: Number()
+        let ns = "123";
+        let nn = Number(ns);
+        console.log(nn);
+        console.log(typeof nn);
+
+        // 숫자+문자의 문자열을 숫자로 형변환 시, NaN 출력 (Not a Number)
+        ns = '123z';
+        nn = Number(ns);
+        console.log(nn);
+
+        // boolean => 숫자 형변환
+        // true에서 1로 변환됨
+        let bn = Number(b); // b: true ==> 1
+        console.log(bn);
+        console.log(typeof bn);
+
+        b = false;
+        bn = Number(b); // b: false ==> 0
+        console.log(bn);
+
+        // boolean으로 형변환: Boolean()
+        // 숫자를 boolean으로 형 변환 시,
+        // 0이 아닌 모든 숫자는 true로 변환
+        let nb = Boolean(100);
+        console.log(nb); // true
+        console.log(typeof nb) // 
+
+        nb = Boolean(0); // 0값은 false로 변환
+        console.log(nb);
+
+        // 문자형 => boolean
+        // 빈 문자열 제외 true만 반환
+        let ssb = Boolean('hong');
+        console.log(ssb); // true
+        console.log(typeof ssb);
+        ssb = Boolean('0');
+        console.log(ssb);
+        ssb = Boolean(''); // 빈 문자열만 false로 변환
+        console.log(ssb);
+
+        // 객체 => boolean
+        // 객체는 무조건 true
+        let obj = {A:'aaa'};
+        console.log(Boolean(obj)); // true
+        obj = {};
+        console.log(Boolean(obj)); // true
+
+        let arr = [];
+        console.log(Boolean(arr)); // true
+
+        // null => boolean
+        console.log(Boolean(null)); // false
+
+        // undifined => boolean
+        let v; // undifined
+        console.log(v); // undifined
+        console.log(Boolean(v)); // undifined
+
+        // Nan => boolean
+        console.log(Boolean(NaN)); // false
+
+        // 형 변환 시 false
+        // 0, null, '', undefined, NaN
+        // 주의: '0', ' '는 true로 변환
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var product = {
+            name: '건조망고',
+            type: '당절임',
+            ingrediant: '망고, 설탕, 메타중아환산나트륨, 치자황생소',
+            origin: '피리핀'
+        }
+
+
+
+        var n1 = product.name; // 건조망고
+        var n2 = product["name"]; // 건조망고
+        console.log(n1);
+
+        // for in 문에서 in 뒤에 객체가 올 경우, 앞 변수(i)에는 Key가 옴
+        for(var i in product) {
+            console.log(i + ':' + product[i]);
+        }
+
+        var arr = [10, 20, 30, 40, 50];
+        // for in 문에서 in 뒤에 배열이 올 경우, 앞 변수(i)에 인덱스(순서)가 옴
+        for(var i in arr) {
+            console.log(arr[i]);
+        }
+
+        // for of 문은 배열을 위한 향상된 for문. 앞 변수(i)에 값 자체가 옴
+        for(var i of arr) {
+            console.log(i);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

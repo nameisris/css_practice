@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // src를 script에서 지정하므로써,
+        // 동적으로 지정 가능 (추후 변경에 용이)
+        window.onload = function() {
+            let image = document.getElementById('image');
+            image.src = 'flower1.jpg';
+            image.width = 300;
+            image.height = 200;
+
+            let div = document.getElementById('div');
+            // div.setAttribute('data', 'I am d data');
+            console.log(div.getAttribute('data-name'));
+        }
+
+
+    </script>
+</head>
+    <img id="image" src="" alt="">
+
+    <div id="div" data-name="hong"></div>
+</body>
+</html>

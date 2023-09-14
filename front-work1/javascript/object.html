@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // {}: obeject 타입
+        // {}은 항상 key와 value를 쌍으로 넣어줌
+        // 여러 쌍일 경우, 콤마로 구분
+        let per = {name: 'hong', age: 30, addr: 'seoul'};
+        // alert(typeof per);
+
+        // let pers = [];
+        // alert(typeof pers); // object
+
+        // let arr = [10, 20, 30, 40, 50];
+        // let sum = 0;
+        // for(i = 0;i < arr.length;i++) {
+        //     sum += arr[i];
+        // }
+
+        // document.write(sum);
+
+        let pers = [{name: 'hong', age: 30, addr:'seoul'},
+                    {name: 'kong', age: 40, addr:'incheon'},
+                    {name: 'gong', age: 50, addr:'busan'}];
+        let str = '<table border=1><tr><th>이름</th><th>나이</th><th>주소</th></tr>';
+
+        for(i = 0;i < pers.length;i++) {
+            str+=` <tr><td>${pers[i].name}</td><td>${pers[i].age}</td><td>${pers[i].addr}</td></tr>`;
+        }
+        str+='</table>';
+        document.write(str);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

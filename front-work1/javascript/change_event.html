@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // select 객체가 변경될 경우
+            select.onchange = (e) => {
+                fruit.textContent = e.target.value;
+                // alert(e.target.value);
+            }
+            // 태그 안의 값이 변경될 때마다 이벤트 발생
+            input.oninput = (e) => {
+                console.log(e.target.value);
+            }
+
+            // css의 input 태그의 radio 타입의 query를 모두 가져옴
+            let radios = document.querySelectorAll('input[type="radio"]');
+            // 여러 개이므로, for문을 통해 모두 이벤트를 지정
+            for(let radio of radios) {
+                radio.onchange = (e) => {
+                    alert(e.target.value);
+                }
+            }
+        }
+    </script>
+
+
+</head>
+<body>
+    <select name="" id="select">
+        <option value="apple">사과</option>
+        <option value="banana">바나나</option>
+        <option value="orange">오렌지</option>
+    </select>
+    <div id="fruit">과일</div>
+
+    <input type="text" id="input">
+
+    <input type="radio" name="gender" value="male" checked>남
+    <input type="radio" name="gender" value="female" checked>여
+</body>
+</html>

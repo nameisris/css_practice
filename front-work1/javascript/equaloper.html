@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n = 10;
+        let s = '10';
+
+        // 타입이 다르지만,
+        // 비교문에서 같은 타입으로 자동으로 비교
+        if(n == s) { // 암시적 형변환에 의해 데이터 같은지 비교
+            console.log('같다');
+        } else {
+            console.log('다르다');
+        }
+
+        if(n === s) { // 데이터와 자료형까지 같은지 비교
+            console.log('같다');
+        } else {
+            console.log('다르다');
+        }
+
+        let b = true;
+        let bs = 'true';
+
+        // boolean의 경우 암시적 형변환을 통한 비교 불가능
+        if(b == bs) {
+            console.log('같다');
+        } else {
+            console.log('다르다');
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

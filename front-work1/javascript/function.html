@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 함수 이름을 선언
+        function add(x, y) {
+            return x + y;
+        }
+        var s = add(10, 20);
+        // alert(add(10, 20));
+        alert(s);
+
+        var sum = add;
+        var s2 = sum(100, 200);
+
+        // 함수를 정의하여 변수명에 넣음
+        // 엄밀히 말해 함수에 이름이 있는 것은 아님
+        var minus = function(x, y) {
+            return x - y;
+        }
+        alert(minus(100, 50));
+
+        // 화살표 함수
+        // 파라미터 => 함수 body;
+        // 중괄호가 있으면 반드시 return 기재
+        // 중괄호가 없으면, return할 값만 기재
+        var multi = (x, y) => x * y;
+        var multi = (x, y) => { return x * y };
+
+        document.write(multi(10, 20));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

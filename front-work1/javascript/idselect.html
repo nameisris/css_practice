@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // querySelector는 뭐든지 가져올 수 있음
+            // id를 가져올 때는 #을 붙임
+            // let clock = document.querySelector('#clock');
+
+            // id를 가져오는 getElementById
+            let clock = document.getElementById('clock');
+
+            // 주기(interval) 지정
+            setInterval(function() {
+                let now = new Date();
+                clock.innerHTML = now.toString();
+            }, 1000); // 1000 msec = 1 sec
+        }
+    </script>
+</head>
+<body>
+    <h1 id="clock"></h1>
+</body>
+</html>

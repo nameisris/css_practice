@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 태그 속성을 스크립트에서 지정
+        // 자동으로 호출되는 함수: 이벤트 함수
+        // 특정 페이지가 호출될 때 호출되도록
+        // onload를 사용
+        // window 창의 일종인 브라우저를 load할 때 호출되도록 지정
+        window.onload = function() { // dom이 모두 생성된 후에 호출
+            document.querySelector('h2').style.color='red';
+            let h1s = document.querySelectorAll('h1');
+            // console.log(h1s); // h1, h1 출력
+
+            for(var h1 of h1s) {
+                h1.style.backgroundColor='red';
+            }
+        }
+
+        // dom (Document Object Model)
+        //
+
+    </script>
+</head>
+<body>
+    <h1>Hello Javascript</h1>
+    <h1>Hello Javascript</h1>
+    <h2>Hello jQuery</h2>
+</body>
+</html>

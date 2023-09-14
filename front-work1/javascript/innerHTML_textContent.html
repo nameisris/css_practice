@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // innerHTML은 따옴표 안의 태그를 태그로 인식
+            let div1 = document.getElementById("div1");
+            div1.innerHTML = '<h1>Bye!!</h1>'
+
+            // textContent는 따옴표 안의 태그를 그냥 문자열로 인식
+            let div2 = document.getElementById("div2");
+            div2.textContent = '<h1>Bye!!</h1>'
+
+            // 만약 태그가 없는 문자열을 넣어준 경우, innertHTML과 textContent는 동일하게 출력됨
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+    <div id="div2"></div>
+</body>
+</html>

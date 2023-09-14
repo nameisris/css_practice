@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            // form id의 submit이 일어났을 경우
+            form.onsubmit = function(e) {
+                let id = document.getElementById("id");
+                if(id.value.trim().length < 4) {
+                    alert('아이디 오류');
+                    e.preventDefault();
+                    // return false;
+                }
+
+                let password = document.getElementById("password");
+                if(password.value.trim().length < 4) {
+                    alert('비밀번호 오류');
+                    e.preventDefault();
+                    // return false;
+                }
+                // submit 태그는 태그의 값을 전송하며 페이지를 새로고침
+                // false를 반환할 경우, 함수 종료 (onsubmit 함수가 중간에 종료되면서 페이지 넘김 자체를 안하게 됨)
+                // e.preventDefault(); : return false를 안하므로, 아래의 내용은 실행하지만, submit의 기본 페이지 넘김은 안함
+            }
+        }
+    </script>
+</head>
+<body>
+    <form action="test.html" id="form">
+        <input type="text" name="id" id="id"><br>
+        <input type="password" name="password" id="password"><br>
+        <input type="checkbox" name="hobby" value="book">독서
+        <input type="checkbox" name="hobby" value="movie">영화 감상
+        <input type="checkbox" name="hobby" value="music">음악 감상<br>
+        <input type="radio" name="gender" value="male">남
+        <input type="radio" name="gender" value="female">여<br>
+        <input type="submit">
+
+    </form>
+    
+</body>
+</html>
