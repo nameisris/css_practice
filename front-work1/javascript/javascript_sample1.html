@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .selected {
+            background-color: #0f0;
+        }
+        /* li 태그에 마우스 커서의 포인터가 위치할 경우, 마우스 커서를 손가락 형태로 표시 */
+        li {
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        // 특정 li를 클릭했을 때 동적인 변경이 되도록
+        // html이 아닌 script(JS)에서 작성
+
+        function toggleSelect(li) {
+            li.classList.toggle('selected');
+        }
+
+        function singleSelect(li) {
+            // ul 밑의 selected되어진 것을 가져옴
+            let selected = ul.querySelectorAll('.selected');
+
+            // selected되어진 것을 remove
+            for(var elem of selected) {
+                elem.classList.remove('selected');
+            }
+
+            // selected된 것만 그대로 add
+            li.classList.add('selected');
+        }
+
+        window.onload = function() {
+            ul.onclick = function(e) {
+                // ul에서 li 부분이 눌러진 경우가 아닐 경우, 종료(아무 일 없음)
+                if(e.target.tagName != 'LI') return;
+
+                // ctrl + 마우스 좌클릭일 경우
+                if(e.ctrlKey) {
+                    // e.target: 눌러진 객체
+                    toggleSelect(e.target);
+                } else {
+                    singleSelect(e.target);
+                }
+            }
+
+            
+        }
+    </script>
+</head>
+<body>
+    선택하고자 하는 요소를 클릭하세요<br>
+    <ul id="ul">
+        <li class="selected">React</li>
+        <li>Angular</li>
+        <li>Vue</li>
+        <li>Svelte</li>
+        <li>Blazor</li>
+    </ul>
+</body>
+</html>

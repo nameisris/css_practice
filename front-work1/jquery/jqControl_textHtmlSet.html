@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        // 따옴표가 여러 개가 들어갈 경우, 큰 따옴표와 작은 따옴표를 혼용해서 사용
+        $(function() {
+            $('h1:nth-child(1)').text("<a href='https://www.naver.com'>네이버</a>");
+            $('h1:nth-child(2)').text('<a href="https://daum.net">다음</a>');
+        })
+
+        // JS에서의 사용법
+        // window.onloda = function() {
+        //     document.querySelector('h1:nth-child(1)').textContent = "<a href='https://www.naver.com'>네이버</a>";
+        //     document.querySelector('h1:nth-child(1)').innerHTML = '<a href="https://daum.net">다음</a>';
+        // }
+    </script>
+</head>
+<body>
+    <h1>Header - 0</h1>
+    <h1>Header - 1</h1>
+</body>
+</html>

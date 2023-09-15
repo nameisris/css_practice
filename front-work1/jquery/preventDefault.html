@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function() {
+            $('a').click(function(e) {
+                // 기본 기능 제어
+                // alert는 동작하지만, 기본 기능인 페이지 넘김을 방지
+                // e.preventDefault();
+
+                // 기본 기능 막음
+                // 함수 종료 구문이므로
+                // 당연히 하단의 alert 함수도 동작하지 않음
+                return false;
+                alert("click");
+            })
+
+            // 특별한 기본 기능이 없기에, 기본 기능 제어를 하나 마나
+            $('button').click(function(e) {
+                e.preventDefault();
+            })
+
+            $('form').submit(function(e) {
+                e.preventDefault();
+            })
+        })
+    </script>
+</head>
+<body>
+    <a href="http://kosta.com">코스타</a>
+    <button>버튼</button>
+    <form action="http://kosta.com">
+        <input type="submit" name="" id="">
+    </form>
+</body>
+</html>

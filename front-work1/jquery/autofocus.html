@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        // 키보드에서 손을 떼는 시점에
+        // jumin1의 input 값이 6개 이상이라면
+        $(function() {
+            // keyup: 키보드에서 손을 땠을 때
+            // keydown: 키보드를 눌렀을 때
+            $('#jumin1').keyup(function() {
+                if($(this).val().length >= 6) {
+                    $('#jumin2').focus();
+                }
+            })
+
+            $('#jumin2').keyup(function(e) {
+                // KeyCode 8: backspace
+                if(e.keyCode == 8 && $(this).val().length == 0) {
+                    $('#jumin1').focus();
+                }
+            })
+
+            // 키보드를 누를 때
+            // 입력값이 0~9가 아니라면
+            $('input').keydown(function(e) {
+                // keyCode 48 ~ 57: 0 ~ 9
+                if(!((e.keyCode >= 48 && e.keyCode <= 57)||e.keyCode == 8)) return false;
+            })
+
+            $('#name').keydown(function(e) {
+                if(!(e.KeyCode == 229 || e.keyCode == 8)) return false;
+            })
+                
+        })
+    </script>
+</head>
+<body>
+    <input id="jumin1" type="text" maxlength="6">
+    <span>-</span>
+    <input id="jumin2" type="text" maxlength="7"><br>
+    <input id="name" type="text" name="">
+</body>
+</html>

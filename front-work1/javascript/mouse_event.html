@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            width: 100px; height: 100px;
+            background-color: red;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            btn.onclick = function(event) {
+                // console.log(event.button);
+                console.log(event.button);
+            }
+
+            // contextmenu: 우클릭 시 나오는 메뉴
+            btn.oncontextmenu = function(event) {
+                console.log(event.button)
+            }
+
+            // 마우스 다운/업 클릭 이벤트는 왼쪽 버튼을 누르면 같이 발생
+            btn.onmousedown = function(event) {
+                console.log("Mouse Down");
+            }
+
+            btn.onmouseup = function(event) {
+                console.log("Mouse Up")
+            }
+
+            // 특정 키(alt, shift, ctrl)와 함께 마우스 입력(onclick)을 받는 경우
+            div.onclick = function(event) {
+                if(event.altKey) {
+                    console.log("Enter Alt Key");
+                } else if(event.shiftKey) {
+                    console.log("Enter Shift Key");
+                } else if(event.ctrlKey) {
+                    console.log("Enter Ctrl Key");
+                }
+            }
+
+            // 더블클릭하는 경우
+            div.ondblclick = function(event) {
+                console.log("더블클릭됨");
+                // 더블클릭시 작동할 기능을 이 자리에 작성하면 된다
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">click</button>
+    <div id="div">div</div>
+</body>
+</html>

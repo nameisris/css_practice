@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script>
+        $(function() {
+            // div 내부의 태그문을 가져옴
+            var text = $('div').text();
+            var html = $('div').html();
+
+            // text는 태그를 제외한 문자열을 가져옴
+            // 또한 text는 태그문이 여러 개일 때, 전부 가져옴
+            // 즉, text는 Header - 0Header - 1을 가져옴
+
+            // html은 태그의 속성이 반영된 것을 가져옴
+            // 또한 html은 가장 앞에 있는 하나의 태그문만 가져옴
+            // 즉, html은 Header - 0을 h1 속성으로 가져옴
+
+            console.log(text);
+            console.log(html);
+
+            // body 태그에 새로운 태그문 추가
+            $('body').append(`<p>text: ${text}</p>`);
+            $('body').append(`<p>html: ${html}</p>`);
+        })
+    </script>
+</head>
+<body>
+    <div><h1>Header - 0</h1></div>
+    <div><h1>Header - 1</h1></div>
+</body>
+</html>
