@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column; /* 수직 정렬 */
+            align-items: center; /* 수평 정렬 */
+        }
+        table {
+            width: 600px;
+            border: 1px solid black;
+            border-spacing: 0px;
+        }
+        table th {
+            background-color: lightgray;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+        // 데이터를 받아왔다고 가정 
+        var accountList = [
+            { no: 1, accnum: '계좌번호1', name: '글쓴이 1', amount: '1200000', acctype: '특수', grade: 'Silver' },
+            { no: 2, accnum: '계좌번호2', name: '글쓴이 2', amount: '12333200', acctype: '특수', grade: 'Gold' },
+            { no: 3, accnum: '계좌번호3', name: '글쓴이 3', amount: '3234689000', acctype: '특수', grade: 'VIP' },
+            { no: 4, accnum: '계좌번호4', name: '글쓴이 4', amount: '200000', acctype: '일반', grade: 'Normal' }
+        ];
+
+        $(function() {
+            for(var account of accountList) {
+                var tr = $('<tr></tr>');
+                var td_no = $(`<td>${account.no}</td>`);
+                var td_accnum = $(`<td>${account.accnum}</td>`);
+                var td_name = $(`<td>${account.name}</td>`);
+                var td_amount = $(`<td>${account.amount}</td>`);
+                var td_acctype = $(`<td>${account.acctype}</td>`);
+                var td_grade = $(`<td>${account.grade}</td>`);
+
+                tr.append(td_no);
+                tr.append(td_accnum);
+                tr.append(td_name);
+                tr.append(td_amount);
+                tr.append(td_acctype);
+                tr.append(td_grade);
+                // table을 하나 생성해서 tr을 tbody에 집어넣음
+                $('table>tbody').append(tr);
+            }
+            
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h3 style="text-align: center">전체 계좌 조회</h3>
+        
+        <div class="list">
+            <table>
+                <tr>
+                    <th>순서</th>
+                    <th>계좌번호</th>
+                    <th>이름</th>
+                    <th>잔액</th>
+                    <th>계좌종류</th>
+                    <th>등급</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

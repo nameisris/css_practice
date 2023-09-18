@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>MVC 게시판</title>
+    <style>
+        h2 {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            width: 420px;
+            /* border: 1px solid white; */
+            font-size: 13px;
+        }
+        textarea {
+            width: 98%;
+            height: 250px;
+        }
+        tr>:nth-child(1) {
+            width: 30%;
+            background-color: orange;
+        }
+        tr>:nth-child(2) {
+            width: 70%;
+            background-color: skyblue;
+        }
+
+        #mainTextAreaContainer {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>게시판 글 등록</h2>
+
+    <table>
+        <tr>
+            <td>글쓴이</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>제 목</td>
+            <td>
+                <input type="text">
+            </td>
+        </tr>
+        <tr>
+            <td>내 용</td>
+            <td id="mainTextAreaContainer">
+                <textarea></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>이미지 파일 첨부</td>
+            <td>
+                <label for="input-file">
+                </label>
+                <input type="file" id="input-file"/>
+            </td>
+        </tr>
+    </table>
+    <div style="text-align: center">
+        <input type="submit" name="등록" value="등록"> &nbsp; &nbsp;
+        <button type="reset">다시 쓰기</button>
+    </div>
+</body>
+</html>

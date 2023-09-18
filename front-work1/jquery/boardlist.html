@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <title>Spring 게시판</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column; /* 수직 정렬 */
+            align-items: center; /* 수평 정렬 */
+        }
+        #textList {
+            display: inline;
+        }
+        #writeText {
+            display: inline;
+            text-decoration: underline;
+        }
+        .middleDiv {
+            margin: 30px;
+        }
+        #selectBox {
+            display: inline;
+        }
+        table {
+            width: 600px;
+        }
+        table th {
+            background-color: orange;
+            font-weight: bold;
+        }
+        .topDiv>a {
+            font-size: 19px;
+            font-weight: bold;
+        }
+        
+    </style>
+    <script>
+        // 데이터를 받아왔다고 가정 
+        var articleList = [
+            { no: 1, title: '글 제목 1', writer: '글쓴이 1', date: '2023-09-18', count: 100 },
+            { no: 2, title: '글 제목 2', writer: '글쓴이 2', date: '2023-09-19', count: 200 },
+            { no: 3, title: '글 제목 3', writer: '글쓴이 3', date: '2023-09-19', count: 200 },
+            { no: 4, title: '글 제목 4', writer: '글쓴이 4', date: '2023-09-19', count: 200 },
+        ];
+
+        $(function() {
+            for(var article of articleList) {
+                // $(`<tr><td>${article.no}</td><td><a href="detailform.html?no=${article.no}">)
+                var tr = $('<tr></tr>');
+                var td_no = $(`<td>${article.no}</td>`);
+                var td_title = $(`<td><a href="detailform.html?no=${article.no}">${article.title}</a></td>`);
+                var td_writer = $(`<td>${article.writer}</td>`);
+                var td_date = $(`<td>${article.date}</td>`);
+                var td_count = $(`<td>${article.count}</td>`);
+                var td_del = $(`<button>삭제</button>`);
+
+                tr.append(td_no);
+                tr.append(td_title);
+                tr.append(td_writer);
+                tr.append(td_date);
+                tr.append(td_count);
+                tr.append(td_del);
+                // table을 하나 생성해서 tr을 tbody에 집어넣음
+                $('table>tbody').append(tr);
+            }
+            
+        });
+
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="topDiv">
+            <h3 id="textList">글 목록</h3> &nbsp; &nbsp;
+            <a href="writeform.html">글 쓰기</a>
+        </div>
+
+        <form action="./search" method="post"></form>
+
+        <div class="middleDiv">
+            <select name="type">
+                <option value="title">제목</option>
+                <option value="writer">작성자</option>
+                <option value="content">내용</option>
+            </select>
+
+            <input type="text" name="word"/>
+            <input type="submit" value="검색"/>
+        </div>
+
+        <div class="list">
+            <table>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>날짜</th>
+                    <th>조회수</th>
+                    <th>삭제</th>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</body>
+</html>
